@@ -6,11 +6,14 @@ USE codeup_test_db;
 
 /*Albums released after 1991*/
 SELECT 'Albums released after 1991 deleted ' AS 'Info';
+SELECT * FROM albums WHERE release_date > 1991;
 DELETE FROM albums WHERE release_date > 1991;
 
 /*Albums with the genre 'disco'*/
 SELECT 'Albums with Genre ''disco'' deleted'AS 'Info';
+SELECT * FROM albums WHERE genre = 'Disco';
 DELETE FROM albums WHERE genre = 'Disco';
-/*Albums by 'Whitney Houston' (...or maybe an artist of your choice)*/
+-- /*Albums by 'Whitney Houston' (...or maybe an artist of your choice)*/
 SELECT ' Albums by Whitney Houston deleted' AS 'Info';
+SELECT * FROM albums WHERE artist = 'Whitney Houston';
 DELETE FROM albums WHERE artist = 'Whitney Houston';
