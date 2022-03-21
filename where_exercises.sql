@@ -18,4 +18,4 @@ SELECT emp_no, first_name, last_name FROM employees WHERE last_name like'E%' OR 
 -- Duplicate the previous query and update it to find all employees whose last name starts and ends with 'E' — 899 rows.
 SELECT emp_no, first_name, last_name FROM employees WHERE last_name like'E%' AND last_name like '%E';
 -- Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
-SELECT emp_no, first_name, last_name FROM employees where last_name like '%q%' AND NOT last_name LIKE '%qu%';
+SELECT emp_no, first_name, last_name FROM employees WHERE last_name like '%q%' AND NOT last_name LIKE '%qu%';
