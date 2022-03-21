@@ -17,15 +17,22 @@ SELECT emp_no,title FROM titles WHERE title='engineer' ORDER BY title,emp_no DES
 | 499999 | Engineer | Sachin | Tsukuda | M | 1997-11-30
 -- what is the most common birthday?
 SELECT birth_date,COUNT(birth_date) FROM employees GROUP BY birth_date ORDER BY COUNT(birth_date) DESC limit 5;
-| 1952-03-08 |                95 |
+| 1952-03-08 |  95 |
 -- what is the most common  birthday for employees who identified as female? how about vs. those who identified as male?
 SELECT birth_date,COUNT(*),gender FROM employees WHERE gender='M' GROUP BY birth_date,gender ORDER BY gender,COUNT(birth_date) DESC limit 10;
-| 1953-07-11 |       63 | M      |
+| 1953-07-11 | 63 | M  |
 SELECT birth_date,COUNT(*),gender FROM employees WHERE gender='F' GROUP BY birth_date,gender ORDER BY gender,COUNT(birth_date) DESC limit 10;
-| 1953-10-12 |       49 | F      |
+| 1953-10-12 | 49 | F |
 -- what is the most common hire date for female and male employees?
 SELECT hire_date,COUNT(*),gender FROM employees WHERE gender='F' GROUP BY hire_date,gender ORDER BY gender, COUNT(hire_date) DESC limit 10;
-| 1985-07-15 |       61 | F      |
+| 1985-07-15 | 61 | F  |
 -- what is the longest last name of someone born on March 8, 1952?
-SELECT last_name,LENGTH(last_name) FROM employees ORDER BY LENGTH(last_name) ASC;
-| Sankaranarayanan | 16 |
+SELECT last_name,birth_date,LENGTH(last_name) FROM employees WHERE year(birth_date) = 1952 AND month(birth_date) = 3 AND day(birth_date)= 8 GROUP BY birth_date,last_name ORDER BY LENGTH(last_name) DESC;
++---------------+------------+-------------------+
+| last_name     | birth_date | LENGTH(last_name) |
++---------------+------------+-------------------+
+| Bernardinello | 1952-03-08 |                13 |
+| Pietracaprina | 1952-03-08 |                13 |
+| Schlegelmilch | 1952-03-08 |                13 |
+| Chandrasekhar | 1952-03-08 |                13 |
+
