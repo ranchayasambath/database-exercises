@@ -37,7 +37,7 @@ SELECT emp_no,title FROM titles WHERE title='engineer' ORDER BY title,emp_no DES
 +--------+----------+
 | 499999 | Engineer |
 | 499999 | Engineer | Sachin | Tsukuda | M | 1997-11-30
--- what are the names of the 10 most recently hired employees who identified as female in the company? the first 10?
+-- what are the names of the 10 most recently hired employees who identified as female in the company?
 SELECT first_name,last_name,gender,hire_date FROM employees WHERE gender='F'ORDER BY hire_date DESC limit 10;
 +------------+------------+--------+------------+
 | first_name | last_name  | gender | hire_date  |
@@ -52,6 +52,22 @@ SELECT first_name,last_name,gender,hire_date FROM employees WHERE gender='F'ORDE
 | Adil       | Siepmann   | F      | 1999-12-31 |
 | Manton     | Ghemri     | F      | 1999-12-30 |
 | Garnik     | Kolvik     | F      | 1999-12-30 |
++------------+------------+--------+------------+
+--  the first 10?
+SELECT first_name,last_name,gender,hire_date FROM employees ORDER BY hire_date DESC limit 10;
++------------+------------+--------+------------+
+| first_name | last_name  | gender | hire_date  |
++------------+------------+--------+------------+
+| Bikash     | Covnot     | M      | 2000-01-28 |
+| Yucai      | Gerlach    | M      | 2000-01-23 |
+| Hideyuki   | Delgrande  | F      | 2000-01-22 |
+| Volkmar    | Perko      | F      | 2000-01-13 |
+| Ulf        | Flexer     | M      | 2000-01-12 |
+| Jaana      | Verspoor   | F      | 2000-01-11 |
+| Shahab     | Demeyer    | M      | 2000-01-08 |
+| Ennio      | Alblas     | F      | 2000-01-06 |
+| Xuejun     | Benzmuller | F      | 2000-01-04 |
+| Jeong      | Boreale    | M      | 2000-01-03 |
 +------------+------------+--------+------------+
 -- what is the most common birthday?
 SELECT birth_date,COUNT(birth_date) FROM employees GROUP BY birth_date ORDER BY COUNT(birth_date) DESC limit 5;
