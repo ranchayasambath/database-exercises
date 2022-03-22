@@ -55,6 +55,7 @@ SELECT first_name,last_name,gender,hire_date FROM employees WHERE gender='F'ORDE
 +------------+------------+--------+------------+
 --  the first 10?
 SELECT first_name,last_name,gender,hire_date FROM employees ORDER BY hire_date DESC limit 10;
+
 +------------+------------+--------+------------+
 | first_name | last_name  | gender | hire_date  |
 +------------+------------+--------+------------+
